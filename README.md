@@ -1,21 +1,20 @@
 # EBB-Fan-Control
 ## Cooling Fan Control for EBB 36/42 CAN
 
-**WARNING: You are about to read a guide written by a random dude on the internet.  I am not an electriction, infact I'm a computer programmer.  I'm not responsable if you burn your house down or if you destroy your personal property.  Follow this guide at your own risk.**
+**WARNING: You are about to read a guide written by a random dude on the internet.  I am not an electrician, in fact I'm a computer programmer.  I'm not responsible if you burn your house down or if you destroy your personal property.  Follow this guide at your own risk.**
 
 
 ### This is a guide to show you how to control a 3rd fan from your EBB 36/42.  
 
-BJTs are generaly low power devices that may be driven by microcontoller i/o pins.
-The configuration I tested this is with, is the PB9 pin on the EBB 36 board. 
-Per the schematic from BigTreeTech, PB9 has a 100 ohm resistor infront of it. 
-The (B) base of the transisor should not be supplied more than 5 mA.
-In order to supply 5 mA to the (B) base. we need a 900 ohm resistor. 100 + 900 = 1000. 5 V / 5 mA (0.005 A) = 1000 Ohm (1k Ohm)
-The 900 ohm resistor is an ideal value.  You can use slightly less or more (less is perferable; as more will limit the current).  I am using an 820 ohm resistor.
+BJTs are generally low power devices that may be driven by microcontroller i/o pins.
+The configuration I tested this with is the PB9 pin on the EBB 36 board. 
+Per the schematic from BigTreeTech, PB9 has a 100 ohm resistor in front of it. 
+The (B) base of the transistor should not be supplied more than 5 mA.
+In order to supply 5 mA to the (B) base; we need to add 900 ohms of resistance. 5 V / 5 mA (0.005 A) = 1000 Ohm (1k Ohm).
+The 900 ohm resistor is an ideal value.  You can use slightly less or more (less is preferable; as more will limit the current).  I am using an 820 ohm resistor (this will fully saturate the transistor and allow it to run more efficiently).
 If you use another pin, do so at your own risk, as not all the pins are configured the same.
-The (B) base of the 2N2222A will draw considerably less power.
 
-Due to the fact that the Sunon MF20100V1-1000U-A99 2010 Axial Fan is a Brushless DC fan; a diode for flyback should not be required; as diodes are used internally.
+Due to the fact that the Sunon MF20100V1-1000U-A99 2010 Axial Fan is a Brushless DC fan, a diode for flyback should not be required as diodes are used internally.
 
 The BJT 2N2222A (NPN) Transistor is good for continuous current of up to 800mA.  The Sunon MF20100V1-1000U-A99 rated power consumption of 0.53 watts @ 106 mA (far below the power limit of the 2N2222A)
 
@@ -30,9 +29,9 @@ What you will need:
   * Heat gun  
 
 
-The connections are as folllows:
+The connections are as follows:
 * Fan positive wire to +5v.
-* Fan negitive wire to 2N2222A Collector.
+* Fan negative wire to 2N2222A Collector.
 * 2N2222A Emitter to GND.
 * 2N2222A Base to the 900 Ohm Resistor.
 * Other end of 900 Ohm Resistor to EBB36 pin PB9.
@@ -70,7 +69,7 @@ Please note: Current limiting resistor not shown. Current limiting resistor must
 
 ## Where to find stuff:
 
-I purchased these Transisors from amazon:  
+I purchased these Transistors from amazon:  
 https://www.amazon.com/dp/B09DWP4XZ6
 
 I purchased these Resistors from amazon:  
@@ -85,13 +84,13 @@ https://e3d-online.com/products/revo-micro-fan?_pos=1&_sid=c0ca8e5c3&_ss=r
 Or here:  
 https://www.digikey.com/en/products/detail/sunon-fans/MF20100V1-1000U-A99/10441397
 
-Or if you perfer, the fan comes in a Kit for CB-C2:  
+Or if you prefer, the fan comes in a Kit for CB-C2:  
 https://deepfriedhero.in/products/cb-c2-can-bus-for-clockwork-2-kit-by-kejar31?_pos=2&_sid=f8ab6f119&_ss=r
 
 
 ## Technical Information:
 
-Ohms Law Caculator:  
+Ohms Law Calculator:  
 https://ohmslawcalculator.com/ohms-law-calculator
 
 BJT 2N2222A (NPN) Transistor datasheet:  
