@@ -37,6 +37,17 @@ The connections are as folllows:
 * 2N2222A Base to the 900 Ohm Resistor.
 * Other end of 900 Ohm Resistor to EBB36 pin PB9.
 
+Here is my Klipper config for the fan:
+
+```
+[controller_fan canbus_fan]
+pin: EBBCan:PB9
+max_power: 1.0
+shutdown_speed: 1.0
+kick_start_time: 0.5
+heater: heater_bed
+fan_speed: 1.00
+```
 
 BJT 2N2222A (NPN) Transistor
 
